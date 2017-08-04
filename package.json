@@ -10,28 +10,6 @@
     "prettier": "prettier --parser typescript --single-quote --no-semi --write \"src/**/*.{ts,js,json}\"",
     "precommit": "lint-staged"
   },
-  "lint-staged": {
-    "*.{ts,js}": [
-      "prettier --parser typescript --single-quote --no-semi --write",
-      "git add"
-    ]
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src/"
-    ],
-    "transform": {
-      ".ts$": "<rootDir>/node_modules/ts-jest/dist/preprocessor.js"
-    },
-    "cacheDirectory": "./jest-cache",
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ]
-  },
   "dependencies": {
     "body-parser": "~1.17.1",
     "dotenv": "^4.0.0",
@@ -53,5 +31,27 @@
     "supertest": "^3.0.0",
     "ts-jest": "^20.0.7",
     "tsc-watch": "^1.0.7"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --parser typescript --single-quote --no-semi --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "transform": {
+      ".ts$": "<rootDir>/node_modules/ts-jest/dist/preprocessor.js"
+    },
+    "cacheDirectory": "./jest-cache",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }
