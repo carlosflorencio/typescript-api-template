@@ -3,12 +3,11 @@ COPY . /app
 WORKDIR /app
 ENV NODE_ENV=production
 
-# install dependencies to run the app the note: typescript is also installed.
-# including typescript in dependencies and not devDependencies simplifies this
-# build process because we do not need a previous compile step
-RUN yarn install
+# install devDependencies to be able to compile the typescript files
+# will result in a bigger image but whatever..
+RUN yarn install --production=false
 
-# compiles typescript to build folder
+# compile typescript files to build folder
 RUN yarn build
 
 # run the app
